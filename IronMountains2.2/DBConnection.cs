@@ -8,15 +8,17 @@ namespace IronMountains2._2
 {
     class DBConnection
     {
+        //basic class for DB interaction using App.config
         private DBConnection()
         {
         }
-
+        #region Properties
         public string Server { get; set; }
         public string DatabaseName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-
+        #endregion
+        #region Methods
         public MySqlConnection Connection { get; set; }
 
         private static DBConnection _instance = null;
@@ -46,5 +48,6 @@ namespace IronMountains2._2
         {
             Connection.Close();
         }
+        #endregion
     }
 }
